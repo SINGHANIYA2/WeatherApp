@@ -1,0 +1,261 @@
+*,*::before,*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+:root {
+    --colorDark1: #112D4E;
+    --colorDark2: #3F72AF;
+    --colorLight1: #DBE2EF;
+    --colorLight2: #F9F7F7;
+}
+.wrapper{
+    width: 100vw;
+    min-height: 100vh;
+    color: var(--colorLight2);
+    background-color: #112d4e;
+    background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%);
+}
+
+h1{
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1.75px;
+    padding-top: 30px;
+}
+.tab-container{
+    display: flex;
+    justify-content: space-between;
+    max-width: 550px;
+    margin: 4rem auto;
+}
+.tab{
+    letter-spacing: 1.75px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    padding: 5px 8px;
+}
+.tab.current-tab{
+    background-color: rgba(219,226,239,0.5);
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .tab-container {
+        margin-top: 2rem;
+        width: 80%;
+    }
+
+    .tab {
+        font-size: 0.75rem;
+    }
+}
+
+.weather-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.4rem;
+    margin-block: 4rem;
+}
+
+.sub-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 1000px;
+}
+.grant-location-container img{
+    margin-bottom: 2rem;
+}
+.btn {
+    all: unset;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--colorDark2);
+}
+.grant-location-container p:nth-of-type(1){
+    font-size: 30px;
+    letter-spacing: 1.75px;
+    font-weight: 500;
+}
+.grant-location-container p:nth-of-type(2){
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: 100;
+}
+.grant-location-container.active{
+    display: flex;
+}
+.grant-location-container{
+    display: none;
+}
+[data-grantAccess]{
+    margin-top: 1rem;
+}
+form{
+    display: flex;
+    justify-content: space-between;
+    width: 550px;
+    gap: 8px;
+}
+/* @media (max-width: 768px) {
+    form {
+        
+    }
+} */
+form input{
+    all: unset;
+    width: calc(100% - 80px);
+    height: 40px;
+    padding: 0 20px;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 10px;
+}
+.form-container input:focus{
+    outline: 3px solid rgba(255,255,255,0.7);
+}
+
+.form-container{
+    display: none;
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 0 10px;
+}
+
+.form-container.active{
+    display: flex;
+}
+
+.form-container input::placeholder{
+    margin-left: 20px;
+    color: var(--colorLight1);
+}
+
+.form-container .btn img {
+    object-fit: contain;
+}
+
+.form-container button{
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    padding: unset;
+    border-radius: 100%;
+}
+
+.loading-container{
+    display: none;
+}
+.loading-container p{
+    text-transform: uppercase;
+}
+.loading-container.active{
+    display: flex;
+}
+
+.user-info-container.active{
+    display: flex;
+}
+.user-info-container{
+    display: none;
+}
+
+.name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    gap: 20px;
+    margin: 10px auto;
+}
+
+[data-weatherdesc]{
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+[data-temp]{
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.user-info-container p::first-letter {
+  text-transform: uppercase;
+}
+
+.parameter-container{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 20px;    
+}
+
+.parameter{
+    width: 180px;
+    height: 150px;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px 0;
+}
+.parameter img{
+    background:transparent;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.api-error-container {
+    display: none;
+}
+
+.api-error-container.active {
+    display: flex;
+    gap: 1rem 0;
+}
+
+.api-error-container p {
+    text-align: center;
+}
+
+.api-error-container img {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+@media (max-width:768px) {
+    .parameter-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .parameter {
+        width: 100%;
+    }
+}
