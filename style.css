@@ -101,6 +101,7 @@ h1{
 }
 .grant-location-container{
     display: none;
+    gap: 1rem;
 }
 [data-grantAccess]{
     margin-top: 1rem;
@@ -111,11 +112,7 @@ form{
     width: 550px;
     gap: 8px;
 }
-/* @media (max-width: 768px) {
-    form {
-        
-    }
-} */
+
 form input{
     all: unset;
     width: calc(100% - 80px);
